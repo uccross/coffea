@@ -1,0 +1,7 @@
+Candidate
+=========
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: Candidate
+   :show-inheritance:

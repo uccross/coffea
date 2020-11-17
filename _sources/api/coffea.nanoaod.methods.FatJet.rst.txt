@@ -1,0 +1,31 @@
+FatJet
+======
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: FatJet
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~FatJet.LOOSE
+      ~FatJet.TIGHT
+      ~FatJet.TIGHTLEPVETO
+      ~FatJet.enable_genjet
+      ~FatJet.isLoose
+      ~FatJet.isTight
+      ~FatJet.isTightLeptonVeto
+      ~FatJet.subjetmap
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: LOOSE
+   .. autoattribute:: TIGHT
+   .. autoattribute:: TIGHTLEPVETO
+   .. autoattribute:: enable_genjet
+   .. autoattribute:: isLoose
+   .. autoattribute:: isTight
+   .. autoattribute:: isTightLeptonVeto
+   .. autoattribute:: subjetmap

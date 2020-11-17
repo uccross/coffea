@@ -1,0 +1,7 @@
+JaggedTLorentzVectorArray
+=========================
+
+.. currentmodule:: coffea.analysis_objects
+
+.. autoclass:: JaggedTLorentzVectorArray
+   :show-inheritance:

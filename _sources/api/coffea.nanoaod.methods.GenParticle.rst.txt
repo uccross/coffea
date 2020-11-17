@@ -1,0 +1,31 @@
+GenParticle
+===========
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: GenParticle
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GenParticle.FLAGS
+      ~GenParticle.distinctParent
+      ~GenParticle.enable_children
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GenParticle.hasFlags
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: FLAGS
+   .. autoattribute:: distinctParent
+   .. autoattribute:: enable_children
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: hasFlags

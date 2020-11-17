@@ -1,0 +1,5 @@
+coffea.analysis_objects
+=======================
+
+.. automodapi:: coffea.analysis_objects
+    :no-heading:

@@ -1,0 +1,21 @@
+PreloadedDataFrame
+==================
+
+.. currentmodule:: coffea.processor
+
+.. autoclass:: PreloadedDataFrame
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~PreloadedDataFrame.available
+      ~PreloadedDataFrame.materialized
+      ~PreloadedDataFrame.size
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: available
+   .. autoattribute:: materialized
+   .. autoattribute:: size

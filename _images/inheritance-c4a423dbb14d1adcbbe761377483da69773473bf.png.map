@@ -1,0 +1,16 @@
+<map id="inheritance7a5996c488" name="inheritance7a5996c488">
+<area shape="rect" id="node14" href="../api/coffea.nanoaod.methods.METVector.html#coffea.nanoaod.methods.METVector" target="_top" title="Implements the usual TVector2 methods, storing minimal materialized arrays in polar coordinates" alt="" coords="310,154,366,170"/>
+<area shape="rect" id="node4" href="../api/coffea.nanoaod.methods.Candidate.html#coffea.nanoaod.methods.Candidate" target="_top" title="Implements the usual TLorentzVector methods but also propogates sum of charges" alt="" coords="527,78,581,94"/>
+<area shape="rect" id="node7" title="Embeds all common gen particle and jet cross&#45;references" alt="" coords="613,48,690,64"/>
+<area shape="rect" id="node9" href="../api/coffea.nanoaod.methods.FsrPhoton.html#coffea.nanoaod.methods.FsrPhoton" target="_top" title="NanoAOD fsr photon object" alt="" coords="625,78,678,94"/>
+<area shape="rect" id="node11" href="../api/coffea.nanoaod.methods.GenVisTau.html#coffea.nanoaod.methods.GenVisTau" target="_top" title="NanoAOD visible tau object" alt="" coords="624,108,679,124"/>
+<area shape="rect" id="node5" href="../api/coffea.nanoaod.methods.LorentzVector.html#coffea.nanoaod.methods.LorentzVector" target="_top" title="Implements the usual TLorentzVector methods, storing minimal materialized arrays in pt&#45;eta&#45;phi&#45;mass coordinates" alt="" coords="428,124,496,139"/>
+<area shape="rect" id="node8" href="../api/coffea.nanoaod.methods.FatJet.html#coffea.nanoaod.methods.FatJet" target="_top" title="NanoAOD large radius jet object" alt="" coords="532,108,576,124"/>
+<area shape="rect" id="node10" href="../api/coffea.nanoaod.methods.GenParticle.html#coffea.nanoaod.methods.GenParticle" target="_top" title="NanoAOD generator&#45;level particle object, including parent and child self&#45;references" alt="" coords="525,139,584,154"/>
+<area shape="rect" id="node12" href="../api/coffea.nanoaod.methods.Jet.html#coffea.nanoaod.methods.Jet" target="_top" title="NanoAOD narrow radius jet object" alt="" coords="532,169,576,184"/>
+<area shape="rect" id="node6" href="../api/coffea.nanoaod.methods.Electron.html#coffea.nanoaod.methods.Electron" target="_top" title="NanoAOD electron object" alt="" coords="719,3,765,19"/>
+<area shape="rect" id="node16" href="../api/coffea.nanoaod.methods.Muon.html#coffea.nanoaod.methods.Muon" target="_top" title="NanoAOD muon object" alt="" coords="720,33,764,49"/>
+<area shape="rect" id="node17" href="../api/coffea.nanoaod.methods.Photon.html#coffea.nanoaod.methods.Photon" target="_top" title="NanoAOD photon object" alt="" coords="720,64,764,79"/>
+<area shape="rect" id="node18" href="../api/coffea.nanoaod.methods.Tau.html#coffea.nanoaod.methods.Tau" target="_top" title="NanoAOD tau object" alt="" coords="720,94,764,109"/>
+<area shape="rect" id="node15" title="Methods: abstract mix&#45;in" alt="" coords="3,170,51,185"/>
+</map>

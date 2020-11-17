@@ -1,0 +1,6 @@
+Initialize
+==========
+
+.. currentmodule:: coffea.arrays
+
+.. autofunction:: Initialize

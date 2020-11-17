@@ -1,0 +1,19 @@
+METVector
+=========
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: METVector
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~METVector.phi
+      ~METVector.pt
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: phi
+   .. autoattribute:: pt

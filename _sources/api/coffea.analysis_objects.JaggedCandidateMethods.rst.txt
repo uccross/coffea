@@ -1,0 +1,73 @@
+JaggedCandidateMethods
+======================
+
+.. currentmodule:: coffea.analysis_objects
+
+.. autoclass:: JaggedCandidateMethods
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~JaggedCandidateMethods.eta
+      ~JaggedCandidateMethods.i0
+      ~JaggedCandidateMethods.i1
+      ~JaggedCandidateMethods.i2
+      ~JaggedCandidateMethods.i3
+      ~JaggedCandidateMethods.i4
+      ~JaggedCandidateMethods.i5
+      ~JaggedCandidateMethods.i6
+      ~JaggedCandidateMethods.i7
+      ~JaggedCandidateMethods.i8
+      ~JaggedCandidateMethods.i9
+      ~JaggedCandidateMethods.mass
+      ~JaggedCandidateMethods.p4
+      ~JaggedCandidateMethods.phi
+      ~JaggedCandidateMethods.pt
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~JaggedCandidateMethods.add_attributes
+      ~JaggedCandidateMethods.argmatch
+      ~JaggedCandidateMethods.candidatesfromcounts
+      ~JaggedCandidateMethods.candidatesfromoffsets
+      ~JaggedCandidateMethods.choose
+      ~JaggedCandidateMethods.cross
+      ~JaggedCandidateMethods.distincts
+      ~JaggedCandidateMethods.fastmatch
+      ~JaggedCandidateMethods.match
+      ~JaggedCandidateMethods.pairs
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: eta
+   .. autoattribute:: i0
+   .. autoattribute:: i1
+   .. autoattribute:: i2
+   .. autoattribute:: i3
+   .. autoattribute:: i4
+   .. autoattribute:: i5
+   .. autoattribute:: i6
+   .. autoattribute:: i7
+   .. autoattribute:: i8
+   .. autoattribute:: i9
+   .. autoattribute:: mass
+   .. autoattribute:: p4
+   .. autoattribute:: phi
+   .. autoattribute:: pt
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_attributes
+   .. automethod:: argmatch
+   .. automethod:: candidatesfromcounts
+   .. automethod:: candidatesfromoffsets
+   .. automethod:: choose
+   .. automethod:: cross
+   .. automethod:: distincts
+   .. automethod:: fastmatch
+   .. automethod:: match
+   .. automethod:: pairs

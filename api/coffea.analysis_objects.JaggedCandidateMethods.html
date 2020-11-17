@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JaggedCandidateMethods &mdash; coffea 0.6.46 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="JaggedTLorentzVectorArray" href="coffea.analysis_objects.JaggedTLorentzVectorArray.html" />
+    <link rel="prev" title="JaggedCandidateArray" href="coffea.analysis_objects.JaggedCandidateArray.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> coffea
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing coffea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Coffea by Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Coffea concepts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference.html">API Reference Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../modules/coffea.analysis_objects.html">coffea.analysis_objects</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../modules/coffea.analysis_objects.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="coffea.analysis_objects.JaggedCandidateArray.html">JaggedCandidateArray</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">JaggedCandidateMethods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coffea.analysis_objects.JaggedTLorentzVectorArray.html">JaggedTLorentzVectorArray</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/coffea.analysis_objects.html#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.analysis_tools.html">coffea.analysis_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.arrays.html">coffea.arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.btag_tools.html">coffea.btag_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.hist.html">coffea.hist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.jetmet_tools.html">coffea.jetmet_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.lookup_tools.html">coffea.lookup_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.lumi_tools.html">coffea.lumi_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.nanoaod.html">coffea.nanoaod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.nanoaod.methods.html">coffea.nanoaod.methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.nanoevents.html">coffea.nanoevents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.nanoevents.methods.base.html">coffea.nanoevents.methods.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.nanoevents.methods.candidate.html">coffea.nanoevents.methods.candidate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.nanoevents.methods.nanoaod.html">coffea.nanoevents.methods.nanoaod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.nanoevents.methods.vector.html">coffea.nanoevents.methods.vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.processor.html">coffea.processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/coffea.util.html">coffea.util</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">coffea</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../reference.html">API Reference Guide</a> &raquo;</li>
+        
+          <li><a href="../modules/coffea.analysis_objects.html">coffea.analysis_objects</a> &raquo;</li>
+        
+      <li>JaggedCandidateMethods</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/coffea.analysis_objects.JaggedCandidateMethods.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="jaggedcandidatemethods">
+<h1>JaggedCandidateMethods<a class="headerlink" href="#jaggedcandidatemethods" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods">
+<em class="property">class </em><code class="sig-prename descclassname">coffea.analysis_objects.</code><code class="sig-name descname">JaggedCandidateMethods</code><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L78"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">awkward.array.objects.Methods</span></code></p>
+<p>JaggedCandidateMethods defines the additional methods that turn a JaggedArray
+into a JaggedCandidateArray suitable for most analysis work. Additional
+user-supplied attributes can be accessed via getattr or dot operators.</p>
+<p>Example (building electrons using this and other coffea / analysis functions):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">electronarrays</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span><span class="n">arrays</span><span class="p">[</span><span class="n">val</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">electroncolumns</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">electronmasses</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">electronarrays</span><span class="p">[</span><span class="s1">&#39;pt&#39;</span><span class="p">],</span> <span class="mf">0.000511</span><span class="p">)</span>
+<span class="n">electronarrays</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">electronmasses</span>
+<span class="n">electrons</span> <span class="o">=</span> <span class="n">JaggedCandidateArray</span><span class="o">.</span><span class="n">candidatesfromcounts</span><span class="p">(</span><span class="n">arrays</span><span class="p">[</span><span class="n">countscolumns</span><span class="p">[</span><span class="s1">&#39;electron&#39;</span><span class="p">]],</span>
+                                                      <span class="o">**</span><span class="n">electronarrays</span><span class="p">)</span>
+<span class="n">el_abseta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">electrons</span><span class="o">.</span><span class="n">eta</span><span class="p">)</span>
+<span class="n">electrons</span><span class="o">.</span><span class="n">add_attributes</span><span class="p">(</span><span class="n">absEta</span>  <span class="o">=</span> <span class="n">el_abseta</span><span class="p">,</span>
+                         <span class="n">EffArea</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">[</span><span class="s1">&#39;electron_id_EffArea&#39;</span><span class="p">](</span><span class="n">el_abseta</span><span class="p">))</span>
+<span class="n">electrons</span><span class="o">.</span><span class="n">add_attributes</span><span class="p">(</span><span class="n">effAreaIso</span> <span class="o">=</span> <span class="n">calcElectronEffAreaIso</span><span class="p">(</span><span class="n">electrons</span><span class="p">,</span> <span class="n">eventInfo</span><span class="p">[</span><span class="s1">&#39;rhoIso&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.eta" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eta</span></code></a></p></td>
+<td><p>fast-cache version of eta</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i0" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i0</span></code></a></p></td>
+<td><p>forward i0 from base</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i1" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i1</span></code></a></p></td>
+<td><p>forward i1 from base</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i2" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i2</span></code></a></p></td>
+<td><p>forward i2 from base</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i3" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i3</span></code></a></p></td>
+<td><p>forward i3 from base</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i4" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i4</span></code></a></p></td>
+<td><p>forward i4 from base</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i5" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i5</span></code></a></p></td>
+<td><p>forward i5 from base</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i6" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i6</span></code></a></p></td>
+<td><p>forward i6 from base</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i7" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i7</span></code></a></p></td>
+<td><p>forward i7 from base</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i8" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i8</span></code></a></p></td>
+<td><p>forward i8 from base</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.i9" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i9</span></code></a></p></td>
+<td><p>forward i9 from base</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.mass" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mass</span></code></a></p></td>
+<td><p>fast-cache version of mass</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.p4" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">p4</span></code></a></p></td>
+<td><p>return TLorentzVectorArray of candidates</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.phi" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">phi</span></code></a></p></td>
+<td><p>fast-cache version of phi</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.pt" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pt</span></code></a></p></td>
+<td><p>fast-cache version of pt</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.add_attributes" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_attributes</span></code></a>(**kwargs)</p></td>
+<td><p>Add new attributes to this JaggedCandidateArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.argmatch" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmatch</span></code></a>(cands[, argmatchfunc])</p></td>
+<td><p>returns a jagged array of indices that pass argmatchfunc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.candidatesfromcounts" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">candidatesfromcounts</span></code></a>(counts, **kwargs)</p></td>
+<td><p>Construct a JaggedCandidateArray from input per-event counts, and a valid four-momentum definition and any number of additional physics-object quantities.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.candidatesfromoffsets" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">candidatesfromoffsets</span></code></a>(offsets, **kwargs)</p></td>
+<td><p>Construct a JaggedCandidateArray from input per-event offsets, and a valid four-momentum definition and any number of additional physics-object quantities.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.choose" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choose</span></code></a>(n)</p></td>
+<td><p>This method calls the choose(n) method of JaggedArray to get all pairs per-event contained in a JaggedCandidateArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.cross" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross</span></code></a>(other[, nested])</p></td>
+<td><p>This method calls the cross method of JaggedArray to get all pairs per-event with another JaggedCandidateArray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.distincts" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">distincts</span></code></a>([nested])</p></td>
+<td><p>This method calls the distincts method of JaggedArray to get all unique pairs per-event contained in a JaggedCandidateArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.fastmatch" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fastmatch</span></code></a>(cands[, matchfunc])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.match" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(cands[, matchfunc])</p></td>
+<td><p>returns a mask of candidates that pass matchfunc()</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#coffea.analysis_objects.JaggedCandidateMethods.pairs" title="coffea.analysis_objects.JaggedCandidateMethods.JaggedCandidateMethods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pairs</span></code></a>([nested])</p></td>
+<td><p>This method calls the pairs method of JaggedArray to get all pairs per-event contained in a JaggedCandidateArray.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.eta">
+<code class="sig-name descname">eta</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.eta" title="Permalink to this definition">¶</a></dt>
+<dd><p>fast-cache version of eta</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i0">
+<code class="sig-name descname">i0</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i0" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i0 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i1">
+<code class="sig-name descname">i1</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i1" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i1 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i2">
+<code class="sig-name descname">i2</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i2" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i2 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i3">
+<code class="sig-name descname">i3</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i3" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i3 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i4">
+<code class="sig-name descname">i4</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i4" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i4 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i5">
+<code class="sig-name descname">i5</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i5" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i5 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i6">
+<code class="sig-name descname">i6</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i6" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i6 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i7">
+<code class="sig-name descname">i7</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i7" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i7 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i8">
+<code class="sig-name descname">i8</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i8" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i8 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.i9">
+<code class="sig-name descname">i9</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.i9" title="Permalink to this definition">¶</a></dt>
+<dd><p>forward i9 from base</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.mass">
+<code class="sig-name descname">mass</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>fast-cache version of mass</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.p4">
+<code class="sig-name descname">p4</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.p4" title="Permalink to this definition">¶</a></dt>
+<dd><p>return TLorentzVectorArray of candidates</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.phi">
+<code class="sig-name descname">phi</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>fast-cache version of phi</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.pt">
+<code class="sig-name descname">pt</code><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.pt" title="Permalink to this definition">¶</a></dt>
+<dd><p>fast-cache version of pt</p>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.add_attributes">
+<code class="sig-name descname">add_attributes</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L351"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.add_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add new attributes to this JaggedCandidateArray.
+New values may be given in jagged or flat-column form.
+They will be interpreted using the offsets of the
+JaggedCandidateArray they are being inserted into.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cands</span><span class="o">.</span><span class="n">add_attributes</span><span class="p">(</span> <span class="n">name1</span> <span class="o">=</span> <span class="n">column1</span><span class="p">,</span>
+                      <span class="n">name2</span> <span class="o">=</span> <span class="n">column2</span><span class="p">,</span>
+                      <span class="o">...</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.argmatch">
+<code class="sig-name descname">argmatch</code><span class="sig-paren">(</span><em class="sig-param">cands</em>, <em class="sig-param">argmatchfunc=&lt;function _default_argmatch&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L465"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.argmatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a jagged array of indices that pass argmatchfunc.
+if there is no match a -1 is used to preserve the shape of
+the array represented by self</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.candidatesfromcounts">
+<em class="property">classmethod </em><code class="sig-name descname">candidatesfromcounts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">counts</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L98"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.candidatesfromcounts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a JaggedCandidateArray from input per-event counts, and
+a valid four-momentum definition and any number of additional physics-object quantities.</p>
+<p>Valid four momenta can be define by suppling the following argument combinations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>p4 (from an ArrayMethods-based or cartesian four-tuple array)</p></li>
+<li><p>pt, eta, phi, mass</p></li>
+<li><p>pt, eta, phi, energy</p></li>
+<li><p>pt, theta, phi, energy</p></li>
+<li><p>pt, pz, phi, energy</p></li>
+<li><p>px, py, pz, mass</p></li>
+<li><p>px, py, pz, energy</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Constructing by (pt, eta, phi, mass) will generate a Lorentz vector in that basis.</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cands</span> <span class="o">=</span> <span class="n">JaggedCandidateArray</span><span class="o">.</span><span class="n">candidatesfromcounts</span><span class="p">(</span><span class="n">counts</span><span class="o">=</span><span class="n">counts</span><span class="p">,</span>
+                                                  <span class="n">pt</span><span class="o">=</span><span class="n">column1</span><span class="p">,</span>
+                                                  <span class="n">eta</span><span class="o">=</span><span class="n">column2</span><span class="p">,</span>
+                                                  <span class="n">phi</span><span class="o">=</span><span class="n">column3</span><span class="p">,</span>
+                                                  <span class="n">mass</span><span class="o">=</span><span class="n">column4</span><span class="p">,</span>
+                                                  <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.candidatesfromoffsets">
+<em class="property">classmethod </em><code class="sig-name descname">candidatesfromoffsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">offsets</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L129"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.candidatesfromoffsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a JaggedCandidateArray from input per-event offsets, and
+a valid four-momentum definition and any number of additional physics-object quantities.</p>
+<dl class="simple">
+<dt>Valid four momenta can be define by suppling the following argument combinations:</dt><dd><ul class="simple">
+<li><p>p4 (from an ArrayMethods-based or cartesian four-tuple array)</p></li>
+<li><p>pt, eta, phi, mass</p></li>
+<li><p>pt, eta, phi, energy</p></li>
+<li><p>pt, theta, phi, energy</p></li>
+<li><p>pt, pz, phi, energy</p></li>
+<li><p>px, py, pz, mass</p></li>
+<li><p>px, py, pz, energy</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Constructing by (pt, eta, phi, mass) will generate a Lorentz vector in that basis.</p>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cands</span> <span class="o">=</span> <span class="n">JaggedCandidateArray</span><span class="o">.</span><span class="n">candidatesfromoffsets</span><span class="p">(</span><span class="n">offsets</span><span class="o">=</span><span class="n">offsets</span><span class="p">,</span>
+                                                   <span class="n">pt</span><span class="o">=</span><span class="n">column1</span><span class="p">,</span>
+                                                   <span class="n">eta</span><span class="o">=</span><span class="n">column2</span><span class="p">,</span>
+                                                   <span class="n">phi</span><span class="o">=</span><span class="n">column3</span><span class="p">,</span>
+                                                   <span class="n">mass</span><span class="o">=</span><span class="n">column4</span><span class="p">,</span>
+                                                   <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.choose">
+<code class="sig-name descname">choose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L422"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.choose" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calls the choose(n) method of JaggedArray to get all pairs
+per-event contained in a JaggedCandidateArray.</p>
+<p>The resulting JaggedArray of that call is dressed with the jagged candidate
+array four-momentum and cached fast access pt/eta/phi/mass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.cross">
+<code class="sig-name descname">cross</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em>, <em class="sig-param"><span class="n">nested</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L405"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.cross" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calls the cross method of JaggedArray to get all pairs
+per-event with another JaggedCandidateArray.</p>
+<p>The resulting JaggedArray of that call is dressed with the jagged candidate
+array four-momentum and cached fast access pt/eta/phi/mass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.distincts">
+<code class="sig-name descname">distincts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nested</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L371"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.distincts" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calls the distincts method of JaggedArray to get all unique
+pairs per-event contained in a JaggedCandidateArray.</p>
+<p>The resulting JaggedArray of that call is dressed with the jagged candidate
+array four-momentum and cached fast access pt/eta/phi/mass.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.fastmatch">
+<code class="sig-name descname">fastmatch</code><span class="sig-paren">(</span><em class="sig-param">cands</em>, <em class="sig-param">matchfunc=&lt;function _default_fastmatch&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L459"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.fastmatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.match">
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">cands</em>, <em class="sig-param">matchfunc=&lt;function _default_match&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L454"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.match" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns a mask of candidates that pass matchfunc()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="coffea.analysis_objects.JaggedCandidateMethods.pairs">
+<code class="sig-name descname">pairs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nested</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/CoffeaTeam/coffea/blob/384cc79a35f7874ac6399febbefa78741c7855fd/coffea/analysis_objects/JaggedCandidateMethods.py#L388"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#coffea.analysis_objects.JaggedCandidateMethods.pairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method calls the pairs method of JaggedArray to get all pairs
+per-event contained in a JaggedCandidateArray.</p>
+<p>The resulting JaggedArray of that call is dressed with the jagged candidate
+array four-momentum and cached fast access pt/eta/phi/mass.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="coffea.analysis_objects.JaggedTLorentzVectorArray.html" class="btn btn-neutral float-right" title="JaggedTLorentzVectorArray" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="coffea.analysis_objects.JaggedCandidateArray.html" class="btn btn-neutral float-left" title="JaggedCandidateArray" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Fermi National Accelerator Laboratory
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

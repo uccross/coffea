@@ -1,0 +1,7 @@
+LorentzVector
+=============
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: LorentzVector
+   :show-inheritance:

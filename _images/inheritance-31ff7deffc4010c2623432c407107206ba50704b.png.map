@@ -1,0 +1,10 @@
+<map id="inheritance7ccb3a9b2b" name="inheritance7ccb3a9b2b">
+<area shape="rect" id="node11" href="../api/coffea.analysis_objects.JaggedTLorentzVectorArray.html#coffea.analysis_objects.JaggedTLorentzVectorArray" target="_top" title="TLorentzVector methods mixed in with an awkward0 JaggedArray" alt="" coords="623,31,764,49"/>
+<area shape="rect" id="node4" title="AwkwardArray: abstract base class" alt="" coords="163,39,246,57"/>
+<area shape="rect" id="node6" title="AwkwardArrayWithContent: abstract base class" alt="" coords="280,39,421,57"/>
+<area shape="rect" id="node5" title="Mixin defining all operator special methods using __array_ufunc__." alt="" coords="4,39,129,57"/>
+<area shape="rect" id="node7" title="JaggedArray" alt="" coords="486,48,558,67"/>
+<area shape="rect" id="node8" href="../api/coffea.analysis_objects.JaggedCandidateArray.html#coffea.analysis_objects.JaggedCandidateArray" target="_top" title="Candidate methods mixed in with an awkward0 JaggedArray" alt="" coords="634,75,753,93"/>
+<area shape="rect" id="node9" href="../api/coffea.analysis_objects.JaggedCandidateMethods.html#coffea.analysis_objects.JaggedCandidateMethods" target="_top" title="JaggedCandidateMethods defines the additional methods that turn a JaggedArray" alt="" coords="455,92,588,110"/>
+<area shape="rect" id="node10" title="Methods: abstract mix&#45;in" alt="" coords="177,92,232,110"/>
+</map>

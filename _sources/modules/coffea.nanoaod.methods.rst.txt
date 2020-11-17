@@ -1,0 +1,5 @@
+coffea.nanoaod.methods
+======================
+
+.. automodapi:: coffea.nanoaod.methods
+    :no-heading:

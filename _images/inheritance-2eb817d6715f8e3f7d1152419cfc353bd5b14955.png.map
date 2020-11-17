@@ -1,0 +1,7 @@
+<map id="inheritance8f25bd09db" name="inheritance8f25bd09db">
+<area shape="rect" id="node1" href="../api/coffea.jetmet_tools.FactorizedJetCorrector.html#coffea.jetmet_tools.FactorizedJetCorrector" target="_top" title="This class is a columnar implementation of the FactorizedJetCorrector tool in" alt="" coords="14,203,179,228"/>
+<area shape="rect" id="node2" href="../api/coffea.jetmet_tools.JetCorrectionUncertainty.html#coffea.jetmet_tools.JetCorrectionUncertainty" target="_top" title="This class is a columnar implementation of the JetCorrectionUncertainty tool in" alt="" coords="5,153,188,179"/>
+<area shape="rect" id="node3" href="../api/coffea.jetmet_tools.JetResolution.html#coffea.jetmet_tools.JetResolution" target="_top" title="This class is a columnar implementation of the JetResolution tool in" alt="" coords="43,104,150,129"/>
+<area shape="rect" id="node4" href="../api/coffea.jetmet_tools.JetResolutionScaleFactor.html#coffea.jetmet_tools.JetResolutionScaleFactor" target="_top" title="This class is a columnar implementation of the JetResolutionScaleFactor tool in" alt="" coords="6,55,187,80"/>
+<area shape="rect" id="node5" href="../api/coffea.jetmet_tools.JetTransformer.html#coffea.jetmet_tools.JetTransformer" target="_top" title="This class is a columnar implementation of the the standard recipes for apply JECs, and" alt="" coords="38,5,155,31"/>
+</map>

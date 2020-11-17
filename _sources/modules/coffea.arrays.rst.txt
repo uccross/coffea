@@ -1,0 +1,5 @@
+coffea.arrays
+=============
+
+.. automodapi:: coffea.arrays
+    :no-heading:

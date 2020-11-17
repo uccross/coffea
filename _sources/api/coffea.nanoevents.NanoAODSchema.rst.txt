@@ -1,0 +1,23 @@
+NanoAODSchema
+=============
+
+.. currentmodule:: coffea.nanoevents
+
+.. autoclass:: NanoAODSchema
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~NanoAODSchema.behavior
+      ~NanoAODSchema.mixins
+      ~NanoAODSchema.nested_items
+      ~NanoAODSchema.special_items
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: behavior
+   .. autoattribute:: mixins
+   .. autoattribute:: nested_items
+   .. autoattribute:: special_items

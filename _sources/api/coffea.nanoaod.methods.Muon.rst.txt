@@ -1,0 +1,7 @@
+Muon
+====
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: Muon
+   :show-inheritance:

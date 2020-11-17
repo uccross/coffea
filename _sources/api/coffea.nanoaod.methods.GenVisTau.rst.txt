@@ -1,0 +1,7 @@
+GenVisTau
+=========
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: GenVisTau
+   :show-inheritance:

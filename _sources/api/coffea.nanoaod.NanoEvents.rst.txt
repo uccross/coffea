@@ -1,0 +1,31 @@
+NanoEvents
+==========
+
+.. currentmodule:: coffea.nanoaod
+
+.. autoclass:: NanoEvents
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~NanoEvents.materialized
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NanoEvents.from_arrays
+      ~NanoEvents.from_file
+      ~NanoEvents.tolist
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: materialized
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: from_arrays
+   .. automethod:: from_file
+   .. automethod:: tolist

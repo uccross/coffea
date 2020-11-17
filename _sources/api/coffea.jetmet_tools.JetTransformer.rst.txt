@@ -1,0 +1,27 @@
+JetTransformer
+==============
+
+.. currentmodule:: coffea.jetmet_tools
+
+.. autoclass:: JetTransformer
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~JetTransformer.uncertainties
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~JetTransformer.transform
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: uncertainties
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: transform

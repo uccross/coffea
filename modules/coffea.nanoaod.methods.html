@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>coffea.nanoaod.methods &mdash; coffea 0.6.46 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="METVector" href="../api/coffea.nanoaod.methods.METVector.html" />
+    <link rel="prev" title="NanoEvents" href="../api/coffea.nanoaod.NanoEvents.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> coffea
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing coffea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Coffea by Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Coffea concepts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../reference.html">API Reference Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="coffea.analysis_objects.html">coffea.analysis_objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.analysis_tools.html">coffea.analysis_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.arrays.html">coffea.arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.btag_tools.html">coffea.btag_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.hist.html">coffea.hist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.jetmet_tools.html">coffea.jetmet_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.lookup_tools.html">coffea.lookup_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.lumi_tools.html">coffea.lumi_tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.nanoaod.html">coffea.nanoaod</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">coffea.nanoaod.methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.METVector.html">METVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.LorentzVector.html">LorentzVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.Candidate.html">Candidate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.Electron.html">Electron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.Muon.html">Muon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.Photon.html">Photon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.FsrPhoton.html">FsrPhoton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.Tau.html">Tau</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.Jet.html">Jet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.FatJet.html">FatJet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.GenParticle.html">GenParticle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/coffea.nanoaod.methods.GenVisTau.html">GenVisTau</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.nanoevents.html">coffea.nanoevents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.nanoevents.methods.base.html">coffea.nanoevents.methods.base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.nanoevents.methods.candidate.html">coffea.nanoevents.methods.candidate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.nanoevents.methods.nanoaod.html">coffea.nanoevents.methods.nanoaod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.nanoevents.methods.vector.html">coffea.nanoevents.methods.vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.processor.html">coffea.processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coffea.util.html">coffea.util</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">coffea</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../reference.html">API Reference Guide</a> &raquo;</li>
+        
+      <li>coffea.nanoaod.methods</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/coffea.nanoaod.methods.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="module-coffea.nanoaod.methods">
+<span id="coffea-nanoaod-methods"></span><h1>coffea.nanoaod.methods<a class="headerlink" href="#module-coffea.nanoaod.methods" title="Permalink to this headline">¶</a></h1>
+<p>Awkward 0.x NanoAOD collection methods</p>
+<p>This package provides the object method mixins for the various
+types of NanoAOD collections, as well as a default mapping for collection
+names to methods.</p>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.METVector.html#coffea.nanoaod.methods.METVector" title="coffea.nanoaod.methods.METVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METVector</span></code></a>()</p></td>
+<td><p>Implements the usual TVector2 methods, storing minimal materialized arrays in polar coordinates</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.LorentzVector.html#coffea.nanoaod.methods.LorentzVector" title="coffea.nanoaod.methods.LorentzVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LorentzVector</span></code></a>()</p></td>
+<td><p>Implements the usual TLorentzVector methods, storing minimal materialized arrays in pt-eta-phi-mass coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.Candidate.html#coffea.nanoaod.methods.Candidate" title="coffea.nanoaod.methods.Candidate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Candidate</span></code></a>()</p></td>
+<td><p>Implements the usual TLorentzVector methods but also propogates sum of charges</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.Electron.html#coffea.nanoaod.methods.Electron" title="coffea.nanoaod.methods.Electron"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Electron</span></code></a>()</p></td>
+<td><p>NanoAOD electron object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.Muon.html#coffea.nanoaod.methods.Muon" title="coffea.nanoaod.methods.Muon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Muon</span></code></a>()</p></td>
+<td><p>NanoAOD muon object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.Photon.html#coffea.nanoaod.methods.Photon" title="coffea.nanoaod.methods.Photon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Photon</span></code></a>()</p></td>
+<td><p>NanoAOD photon object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.FsrPhoton.html#coffea.nanoaod.methods.FsrPhoton" title="coffea.nanoaod.methods.FsrPhoton"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FsrPhoton</span></code></a>()</p></td>
+<td><p>NanoAOD fsr photon object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.Tau.html#coffea.nanoaod.methods.Tau" title="coffea.nanoaod.methods.Tau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tau</span></code></a>()</p></td>
+<td><p>NanoAOD tau object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.Jet.html#coffea.nanoaod.methods.Jet" title="coffea.nanoaod.methods.Jet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Jet</span></code></a>()</p></td>
+<td><p>NanoAOD narrow radius jet object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.FatJet.html#coffea.nanoaod.methods.FatJet" title="coffea.nanoaod.methods.FatJet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FatJet</span></code></a>()</p></td>
+<td><p>NanoAOD large radius jet object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.GenParticle.html#coffea.nanoaod.methods.GenParticle" title="coffea.nanoaod.methods.GenParticle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenParticle</span></code></a>()</p></td>
+<td><p>NanoAOD generator-level particle object, including parent and child self-references</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../api/coffea.nanoaod.methods.GenVisTau.html#coffea.nanoaod.methods.GenVisTau" title="coffea.nanoaod.methods.GenVisTau"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GenVisTau</span></code></a>()</p></td>
+<td><p>NanoAOD visible tau object</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="class-inheritance-diagram">
+<h2>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><img src="../_images/inheritance-c4a423dbb14d1adcbbe761377483da69773473bf.png" alt="Inheritance diagram of coffea.nanoaod.methods.common.METVector, coffea.nanoaod.methods.common.LorentzVector, coffea.nanoaod.methods.common.Candidate, coffea.nanoaod.methods.leptons.Electron, coffea.nanoaod.methods.leptons.Muon, coffea.nanoaod.methods.leptons.Photon, coffea.nanoaod.methods.leptons.FsrPhoton, coffea.nanoaod.methods.leptons.Tau, coffea.nanoaod.methods.jets.Jet, coffea.nanoaod.methods.jets.FatJet, coffea.nanoaod.methods.generator.GenParticle, coffea.nanoaod.methods.generator.GenVisTau" usemap="#inheritance7a5996c488" class="inheritance graphviz" /></div>
+<map id="inheritance7a5996c488" name="inheritance7a5996c488">
+<area shape="rect" id="node14" href="../api/coffea.nanoaod.methods.METVector.html#coffea.nanoaod.methods.METVector" target="_top" title="Implements the usual TVector2 methods, storing minimal materialized arrays in polar coordinates" alt="" coords="310,154,366,170"/>
+<area shape="rect" id="node4" href="../api/coffea.nanoaod.methods.Candidate.html#coffea.nanoaod.methods.Candidate" target="_top" title="Implements the usual TLorentzVector methods but also propogates sum of charges" alt="" coords="527,78,581,94"/>
+<area shape="rect" id="node9" href="../api/coffea.nanoaod.methods.FsrPhoton.html#coffea.nanoaod.methods.FsrPhoton" target="_top" title="NanoAOD fsr photon object" alt="" coords="625,78,678,94"/>
+<area shape="rect" id="node11" href="../api/coffea.nanoaod.methods.GenVisTau.html#coffea.nanoaod.methods.GenVisTau" target="_top" title="NanoAOD visible tau object" alt="" coords="624,108,679,124"/>
+<area shape="rect" id="node5" href="../api/coffea.nanoaod.methods.LorentzVector.html#coffea.nanoaod.methods.LorentzVector" target="_top" title="Implements the usual TLorentzVector methods, storing minimal materialized arrays in pt&#45;eta&#45;phi&#45;mass coordinates" alt="" coords="428,124,496,139"/>
+<area shape="rect" id="node8" href="../api/coffea.nanoaod.methods.FatJet.html#coffea.nanoaod.methods.FatJet" target="_top" title="NanoAOD large radius jet object" alt="" coords="532,108,576,124"/>
+<area shape="rect" id="node10" href="../api/coffea.nanoaod.methods.GenParticle.html#coffea.nanoaod.methods.GenParticle" target="_top" title="NanoAOD generator&#45;level particle object, including parent and child self&#45;references" alt="" coords="525,139,584,154"/>
+<area shape="rect" id="node12" href="../api/coffea.nanoaod.methods.Jet.html#coffea.nanoaod.methods.Jet" target="_top" title="NanoAOD narrow radius jet object" alt="" coords="532,169,576,184"/>
+<area shape="rect" id="node6" href="../api/coffea.nanoaod.methods.Electron.html#coffea.nanoaod.methods.Electron" target="_top" title="NanoAOD electron object" alt="" coords="719,3,765,19"/>
+<area shape="rect" id="node16" href="../api/coffea.nanoaod.methods.Muon.html#coffea.nanoaod.methods.Muon" target="_top" title="NanoAOD muon object" alt="" coords="720,33,764,49"/>
+<area shape="rect" id="node17" href="../api/coffea.nanoaod.methods.Photon.html#coffea.nanoaod.methods.Photon" target="_top" title="NanoAOD photon object" alt="" coords="720,64,764,79"/>
+<area shape="rect" id="node18" href="../api/coffea.nanoaod.methods.Tau.html#coffea.nanoaod.methods.Tau" target="_top" title="NanoAOD tau object" alt="" coords="720,94,764,109"/>
+</map></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api/coffea.nanoaod.methods.METVector.html" class="btn btn-neutral float-right" title="METVector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api/coffea.nanoaod.NanoEvents.html" class="btn btn-neutral float-left" title="NanoEvents" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, Fermi National Accelerator Laboratory
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

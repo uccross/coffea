@@ -1,0 +1,7 @@
+FsrPhoton
+=========
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: FsrPhoton
+   :show-inheritance:

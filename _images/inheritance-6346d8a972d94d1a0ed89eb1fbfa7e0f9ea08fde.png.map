@@ -1,0 +1,8 @@
+<map id="inheritancee4c4633d44" name="inheritancee4c4633d44">
+<area shape="rect" id="node1" title="AwkwardArray: abstract base class" alt="" coords="229,31,345,56"/>
+<area shape="rect" id="node4" title="VirtualArray" alt="" coords="393,5,493,31"/>
+<area shape="rect" id="node6" title="Table" alt="" coords="407,55,479,80"/>
+<area shape="rect" id="node2" title="Mixin defining all operator special methods using __array_ufunc__." alt="" coords="5,31,181,56"/>
+<area shape="rect" id="node3" href="../api/coffea.nanoaod.NanoCollection.html#coffea.nanoaod.NanoCollection" target="_top" title="A NanoAOD collection" alt="" coords="541,5,663,31"/>
+<area shape="rect" id="node5" title="Top&#45;level awkward array representing NanoAOD events chunk" alt="" coords="552,55,652,80"/>
+</map>

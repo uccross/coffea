@@ -1,0 +1,17 @@
+NanoCollection
+==============
+
+.. currentmodule:: coffea.nanoaod
+
+.. autoclass:: NanoCollection
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~NanoCollection.from_arrays
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: from_arrays

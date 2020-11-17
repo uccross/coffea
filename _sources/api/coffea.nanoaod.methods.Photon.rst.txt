@@ -1,0 +1,27 @@
+Photon
+======
+
+.. currentmodule:: coffea.nanoaod.methods
+
+.. autoclass:: Photon
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~Photon.LOOSE
+      ~Photon.MEDIUM
+      ~Photon.TIGHT
+      ~Photon.isLoose
+      ~Photon.isMedium
+      ~Photon.isTight
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: LOOSE
+   .. autoattribute:: MEDIUM
+   .. autoattribute:: TIGHT
+   .. autoattribute:: isLoose
+   .. autoattribute:: isMedium
+   .. autoattribute:: isTight

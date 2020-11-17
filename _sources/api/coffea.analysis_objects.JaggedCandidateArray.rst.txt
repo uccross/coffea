@@ -1,0 +1,7 @@
+JaggedCandidateArray
+====================
+
+.. currentmodule:: coffea.analysis_objects
+
+.. autoclass:: JaggedCandidateArray
+   :show-inheritance:
