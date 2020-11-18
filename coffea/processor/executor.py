@@ -842,7 +842,6 @@ def _work_function(item, processor_instance, flatten=False, savemetrics=False,
                         for event_name in derived_arrays.events.fields:
                             if event_name not in to_be_skipped:
                                 virtual_arrays[event_name] = awkward.VirtualArray(lambda event_name: derived_arrays.events[event_name], event_name)
-                                # virtual_arrays[event_name] = ak.to_numpy(derived_arrays.events[event_name])
 
                         events = NanoEvents.from_arrays(virtual_arrays)
                     else:
