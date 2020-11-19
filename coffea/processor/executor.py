@@ -798,16 +798,16 @@ def _work_function(item, processor_instance, flatten=False, savemetrics=False,
         try:
             if schema is NanoEvents:
                 # this is the only uproot3-dependent option
-                filecontext = Uproot3Context(item.filename, xrootdtimeout, mmap)
-            else:
                 if rados:
                     filecontext = RadosContext(item.filename)
                 else:
-                    filecontext = uproot4.open(
-                        item.filename,
-                        timeout=xrootdtimeout,
-                        file_handler=uproot4.MemmapSource if mmap else uproot4.MultithreadedFileSource,
-                    )
+                    filecontext = Uproot3Context(item.filename, xrootdtimeout, mmap)
+            else:
+                filecontext = uproot4.open(
+                    item.filename,
+                    timeout=xrootdtimeout,
+                    file_handler=uproot4.MemmapSource if mmap else uproot4.MultithreadedFileSource,
+                )
             with filecontext as file:
                 if schema is None:
                     # To deprecate
@@ -817,23 +817,11 @@ def _work_function(item, processor_instance, flatten=False, savemetrics=False,
                     events['filename'] = item.filename
                 elif schema is NanoEvents:
                     # To deprecate
-                    events = NanoEvents.from_file(
-                        file=file,
-                        treename=item.treename,
-                        entrystart=item.entrystart,
-                        entrystop=item.entrystop,
-                        metadata={
-                            'dataset': item.dataset,
-                            'filename': item.filename,
-                        },
-                        cache=_get_cache(cachestrategy),
-                    )
-                elif issubclass(schema, schemas.BaseSchema):
                     if rados:
                         from pyarrow import dataset as ds
                         import pyarrow as pa
 
-                        table = pa.ipc.open_stream('{}.arrow'.format(item.filename[8:])).read_all()
+                        table = pa.ipc.open_stream('hep.1.arrow'.format(item.filename[8:])).read_all()
                         das = ds.dataset(source=[item.filename[8:]], format=ds.RadosFormat("test-pool", "/etc/ceph/ceph.conf"), schema=table.schema)
                         table = das.to_table()
                         derived_arrays = ak.from_arrow(table)
@@ -843,23 +831,38 @@ def _work_function(item, processor_instance, flatten=False, savemetrics=False,
                             if event_name not in to_be_skipped:
                                 virtual_arrays[event_name] = awkward.VirtualArray(lambda event_name: derived_arrays.events[event_name], event_name)
 
-                        events = NanoEvents.from_arrays(virtual_arrays)
+                        events = NanoEvents.from_arrays(virtual_arrays, metadata={
+                            'dataset': item.dataset,
+                            'filename': item.filename,
+                        })
                     else:
-                        materialized = []
-                        factory = NanoEventsFactory.from_file(
+                        events = NanoEvents.from_file(
                             file=file,
-                            treepath=item.treename,
-                            entry_start=item.entrystart,
-                            entry_stop=item.entrystop,
-                            runtime_cache=_get_cache(cachestrategy),
-                            schemaclass=schema,
+                            treename=item.treename,
+                            entrystart=item.entrystart,
+                            entrystop=item.entrystop,
                             metadata={
                                 'dataset': item.dataset,
                                 'filename': item.filename,
                             },
-                            access_log=materialized,
+                            cache=_get_cache(cachestrategy),
                         )
-                        events = factory.events()
+                elif issubclass(schema, schemas.BaseSchema):
+                    materialized = []
+                    factory = NanoEventsFactory.from_file(
+                        file=file,
+                        treepath=item.treename,
+                        entry_start=item.entrystart,
+                        entry_stop=item.entrystop,
+                        runtime_cache=_get_cache(cachestrategy),
+                        schemaclass=schema,
+                        metadata={
+                            'dataset': item.dataset,
+                            'filename': item.filename,
+                        },
+                        access_log=materialized,
+                    )
+                    events = factory.events()
                 else:
                     raise ValueError("Expected schema to derive from BaseSchema or NanoEvents, instead got %r" % schema)
                 tic = time.time()
