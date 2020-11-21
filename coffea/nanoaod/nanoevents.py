@@ -271,6 +271,47 @@ class NanoEvents(awkward.Table):
         return events
 
     @classmethod
+    def from_arrow(cls, table):
+        import awkward1 as ak
+        arrays = ak.from_arrow(table)
+        def nptype(event):
+            try:
+                flattened_array = ak.flatten(arrays.events[event])
+            except ValueError as ex:
+                flattened_array = arrays.events[event]
+            return ak.to_numpy(flattened_array).dtype
+        
+        # detect whether an event array is jaggered or not
+        def is_jaggered(event):
+            is_jaggered = False
+            try:
+                ak.to_numpy(arrays.events[event])
+            except ValueError as ex:
+                is_jaggered = True
+            return is_jaggered
+            
+        # Take in an event and return a flattened numpy array for the event.
+        def numpy_generator(event):
+            try:
+                flattened_array = ak.flatten(arrays.events[event])
+            except ValueError as ex:
+                flattened_array = arrays.events[event]
+            return ak.to_numpy(flattened_array)
+
+        # Generate virtual arrays out of Arrow arrays
+        virtual_arrays = {}
+        for event in list(arrays.events.fields):
+            if is_jaggered(event):
+                virtual_type = awkward.type.ArrayType(float('inf'), nptype(event))
+            else:
+                virtual_type =  awkward.type.ArrayType(len(arrays.events), nptype(event))
+
+            virtual_arrays[event] = awkward.VirtualArray(numpy_generator, event, type=virtual_type)
+            virtual_arrays[event].__doc__ = event
+        
+        return NanoEvents.from_arrays(virtual_arrays)
+
+    @classmethod
     def from_file(cls, file, treename=b'Events', entrystart=None, entrystop=None, cache=None, methods=None, metadata=None):
         '''Build NanoEvents directly from ROOT file
 
@@ -296,8 +337,15 @@ class NanoEvents(awkward.Table):
         '''
         if cache is None:
             cache = {}
+
+        if isinstance(file, str) and file.endswith('.arrow'):
+            import pyarrow as pa
+            table = pa.ipc.open_stream(file).read_all()
+            return NanoEvents.from_arrow(table)
+
         if not isinstance(file, uproot.rootio.ROOTDirectory):
             file = uproot.open(file)
+
         tree = file[treename]
         entrystart, entrystop = uproot.tree._normalize_entrystartstop(tree.numentries, entrystart, entrystop)
         arrays = {}
