@@ -271,7 +271,7 @@ class NanoEvents(awkward.Table):
         return events
 
     @classmethod
-    def from_arrow(cls, table):
+    def from_arrow(cls, table, metadata={}):
         import awkward1 as ak
         arrays = ak.from_arrow(table)
         def nptype(event):
@@ -309,7 +309,7 @@ class NanoEvents(awkward.Table):
             virtual_arrays[event] = awkward.VirtualArray(numpy_generator, event, type=virtual_type)
             virtual_arrays[event].__doc__ = event
         
-        return NanoEvents.from_arrays(virtual_arrays)
+        return NanoEvents.from_arrays(virtual_arrays, metadata=metadata)
 
     @classmethod
     def from_file(cls, file, treename=b'Events', entrystart=None, entrystop=None, cache=None, methods=None, metadata=None):

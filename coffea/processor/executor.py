@@ -821,20 +821,16 @@ def _work_function(item, processor_instance, flatten=False, savemetrics=False,
                         from pyarrow import dataset as ds
                         import pyarrow as pa
 
-                        table = pa.ipc.open_stream('hep.1.arrow'.format(item.filename[8:])).read_all()
+                        table = pa.ipc.open_stream('nano_dy_final.arrow'.format(item.filename[8:])).read_all()
                         das = ds.dataset(source=[item.filename[8:]], format=ds.RadosFormat("test-pool", "/etc/ceph/ceph.conf"), schema=table.schema)
                         table = das.to_table()
-                        derived_arrays = ak.from_arrow(table)
-                        to_be_skipped = ['CorrT1METJet', 'Electron', 'GenJetAK8', 'GenJet', 'GenPart', 'SubGenJetAK8', 'GenVisTau', 'IsoTrack', 'Jet', 'LHEPart', 'Muon', 'Photon', 'GenDressedLepton', 'SoftActivityJet', 'Tau', 'TrigObj', 'SV']
-                        virtual_arrays = {}
-                        for event_name in derived_arrays.events.fields:
-                            if event_name not in to_be_skipped:
-                                virtual_arrays[event_name] = awkward.VirtualArray(lambda event_name: derived_arrays.events[event_name], event_name)
-
-                        events = NanoEvents.from_arrays(virtual_arrays, metadata={
-                            'dataset': item.dataset,
-                            'filename': item.filename,
-                        })
+                        events = NanoEvents.from_arrow(
+                            table,
+                            metadata={
+                                'dataset': item.dataset,
+                                'filename': item.filename,
+                            }
+                        )
                     else:
                         events = NanoEvents.from_file(
                             file=file,
