@@ -1,6 +1,8 @@
 import numpy
 import uproot
 import awkward
+import awkward1
+import pyarrow
 from .methods import collection_methods
 from .util import _mixin
 from ..util import _hex, _ascii
@@ -272,20 +274,28 @@ class NanoEvents(awkward.Table):
 
     @classmethod
     def from_arrow(cls, table, metadata={}):
-        import awkward1 as ak
-        arrays = ak.from_arrow(table)
+        '''Build NanoEvents from Apache Arrow Table
+        
+        Parameters
+        ----------
+            table: pyarrow.lib.Table
+                An IPC Table.
+            metadata: dict, optional
+                Arbitrary metadata to embed in this NanoEvents table
+        '''
+        arrays = awkward1.from_arrow(table)
         def nptype(event):
             try:
-                flattened_array = ak.flatten(arrays.events[event])
+                flattened_array = awkward1.flatten(arrays.events[event])
             except ValueError as ex:
                 flattened_array = arrays.events[event]
-            return ak.to_numpy(flattened_array).dtype
+            return awkward1.to_numpy(flattened_array).dtype
         
         # detect whether an event array is jaggered or not
         def is_jaggered(event):
             is_jaggered = False
             try:
-                ak.to_numpy(arrays.events[event])
+                awkward1.to_numpy(arrays.events[event])
             except ValueError as ex:
                 is_jaggered = True
             return is_jaggered
@@ -293,10 +303,10 @@ class NanoEvents(awkward.Table):
         # Take in an event and return a flattened numpy array for the event.
         def numpy_generator(event):
             try:
-                flattened_array = ak.flatten(arrays.events[event])
+                flattened_array = awkward1.flatten(arrays.events[event])
             except ValueError as ex:
                 flattened_array = arrays.events[event]
-            return ak.to_numpy(flattened_array)
+            return awkward1.to_numpy(flattened_array)
 
         # Generate virtual arrays out of Arrow arrays
         virtual_arrays = {}
@@ -339,8 +349,7 @@ class NanoEvents(awkward.Table):
             cache = {}
 
         if isinstance(file, str) and file.endswith('.arrow'):
-            import pyarrow as pa
-            table = pa.ipc.open_stream(file).read_all()
+            table = pyarrow.ipc.open_stream(file).read_all()
             return NanoEvents.from_arrow(table)
 
         if not isinstance(file, uproot.rootio.ROOTDirectory):
