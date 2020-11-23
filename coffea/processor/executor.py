@@ -8,7 +8,6 @@ import sys
 import math
 import copy
 import shutil
-import awkward1 as ak
 import awkward
 import json
 import cloudpickle
