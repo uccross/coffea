@@ -297,35 +297,12 @@ class NanoEvents(awkward.Table):
         def isjagged(event):
             '''Detects whether the array is a JaggedArray or not.
             '''
-            name = event.split("_")[0]
-            jagged_events = [
-                'CorrT1METJet', 
-                'Electron', 
-                'GenJetAK8', 
-                'GenJet', 
-                'GenPart', 
-                'SubGenJetAK8', 
-                'GenVisTau', 
-                'IsoTrack', 
-                'Jet', 
-                'LHEPart', 
-                'Muon', 
-                'Photon', 
-                'GenDressedLepton', 
-                'SoftActivityJet', 
-                'Tau', 
-                'TrigObj', 
-                'SV'
-            ]
-
-            # is_jaggered = False
-            # try:
-            #     awkward1.to_numpy(arrays.events[event])
-            # except ValueError as ex:
-            #     is_jaggered = True
-            # return is_jaggered
-
-            return name in jagged_events
+            is_jaggered = False
+            try:
+                awkward1.to_numpy(arrays.events[event])
+            except ValueError as ex:
+                is_jaggered = True
+            return is_jaggered
 
         def generator(event):
             '''Generates numpy arrays out of Awkward Arrays.

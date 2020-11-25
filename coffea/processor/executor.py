@@ -820,7 +820,7 @@ def _work_function(item, processor_instance, flatten=False, savemetrics=False,
                         from pyarrow import dataset as ds
                         import pyarrow as pa
 
-                        table = pa.ipc.open_stream('nano_dy_final.arrow'.format(item.filename[8:])).read_all()
+                        table = pa.ipc.open_stream('nano_dy.arrow'.format(item.filename[8:])).read_all()
                         das = ds.dataset(source=[item.filename[8:]], format=ds.RadosFormat("test-pool", "/etc/ceph/ceph.conf"), schema=table.schema)
                         table = das.to_table()
                         events = NanoEvents.from_arrow(
