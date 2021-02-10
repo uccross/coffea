@@ -1381,7 +1381,7 @@ def run_spark_job(fileset, processor_instance, executor, executor_args={},
     return output
 
 
-def run_parquet_job(basedir,
+def run_skyhook_job(basedir,
                    treename,
                    processor_instance,
                    executor,
